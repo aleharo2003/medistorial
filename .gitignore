@@ -1,0 +1,6 @@
+Medistorial.DAL/bin/Debug/
+*.dll
+Medistorial/obj/
+Medistorial/bin/Debug/
+Medistorial.DAL/obj/
+.vs/
