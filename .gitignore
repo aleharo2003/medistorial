@@ -4,3 +4,7 @@ Medistorial/obj/
 Medistorial/bin/Debug/
 Medistorial.DAL/obj/
 .vs/
+Medistorial.Models/obj/
+Medistorial.Services/obj/
+Medistorial.Services/bin/
+Medistorial.Web/obj/

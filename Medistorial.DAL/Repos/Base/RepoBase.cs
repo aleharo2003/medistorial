@@ -12,20 +12,20 @@ namespace Medistorial.DAL.Repos.Base
 {
     public abstract class RepoBase<T> : IDisposable, IRepo<T> where T : EntityBase, new()
     {
-        protected readonly MedistorialContext Db;
+        protected readonly ApplicationDbContext Db;
         protected RepoBase()
         {
-            Db = new MedistorialContext();
+            Db = new ApplicationDbContext();
             Table = Db.Set<T>();
         }
-        protected RepoBase(DbContextOptions<MedistorialContext> options)
+        protected RepoBase(DbContextOptions<ApplicationDbContext> options)
         {
-            Db = new MedistorialContext(options);
+            Db = new ApplicationDbContext(options);
             Table = Db.Set<T>();
         }
 
         protected DbSet<T> Table;
-        public MedistorialContext Context => Db;
+        public ApplicationDbContext Context => Db;
 
         public bool HasChanges => Db.ChangeTracker.HasChanges();
 

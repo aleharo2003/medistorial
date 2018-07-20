@@ -1,0 +1,31 @@
+﻿@page
+@model Medistorial.Web.Pages.Borrar.DetailsModel
+
+<div>
+    <h4>Medic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Medic.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Medic.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Medic.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Medic.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Medic.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Medic.TimeStamp)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Medic.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

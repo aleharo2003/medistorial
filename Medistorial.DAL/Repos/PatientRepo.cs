@@ -1,4 +1,5 @@
 ﻿using Medistorial.DAL.EF;
+using Medistorial.DAL.Interfaces;
 using Medistorial.DAL.Repos.Base;
 using Medistorial.Models;
 using Microsoft.EntityFrameworkCore;
@@ -9,9 +10,9 @@ using System.Text;
 
 namespace Medistorial.DAL.Repos
 {
-    public class PatientRepo : RepoBase<Patient>
+    public class PatientRepo : RepoBase<Patient>, IPatientRepo
     {
-        public PatientRepo(DbContextOptions<MedistorialContext> options) : base(options)
+        public PatientRepo(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
         }
