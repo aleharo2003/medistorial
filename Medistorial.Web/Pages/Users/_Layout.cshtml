@@ -1,34 +1,20 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Medistorial</title>
-
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/prettify.css" />
+    <title>@ViewData["Title"] - Users - Medistorial</title>    
+    <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div>Este es el layout de users</div>
-    <div>
+    @*<partial name="_LoginPartial" />*@
+    <div class="container body-content">
         @RenderBody()
     </div>
     <script src="~/lib/jquery/dist/jquery.js"></script>
-    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
-    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="~/js/jquery.bootstrap.wizard.js"></script>
-    <script src="~/js/prettify.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('#rootwizard').bootstrapWizard({
-                onTabClick: function (tab, navigation, index) {
-                    return false;
-                }
-            });
-        });
-    </script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+    <script src="~/js/site.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
     @RenderSection("Scripts", required: false)
 </body>
 </html>

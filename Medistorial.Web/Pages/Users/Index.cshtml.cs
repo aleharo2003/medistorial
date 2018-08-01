@@ -11,11 +11,22 @@ namespace Medistorial.Web.Pages.Users
 {
     public class IndexModel : PageModel
     {
-        
-        
-        public void OnGet()
+        public Patient Patient { get; set; }
+        private readonly IWebApiCalls _webApiCalls;
+        public IndexModel(IWebApiCalls webApiCalls)
         {
-            
+            _webApiCalls = webApiCalls;
+        }
+
+
+        public async Task OnGetAsync(int Id)
+        {
+            Patient = await _webApiCalls.GetPatientAsync((int)Id);
+        }
+        public async Task OnPostAsync()
+        {
+
+            var taka = await _webApiCalls.GetPatientsAsync();
         }
 
     }
