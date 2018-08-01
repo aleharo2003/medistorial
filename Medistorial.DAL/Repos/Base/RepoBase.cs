@@ -81,20 +81,20 @@ namespace Medistorial.DAL.Repos.Base
         }
 
         //TODO: Check For Cascade Delete
-        public int Delete(int id, byte[] timeStamp, bool persist = true)
-        {
-            var entry = GetEntryFromChangeTracker(id);
-            if (entry != null)
-            {
-                if (timeStamp != null && entry.TimeStamp.SequenceEqual(timeStamp))
-                {
-                    return Delete(entry, persist);
-                }
-                throw new Exception("Unable to delete due to concurrency violation.");
-            }
-            Db.Entry(new T { Id = id, TimeStamp = timeStamp }).State = EntityState.Deleted;
-            return persist ? SaveChanges() : 0;
-        }
+        //public int Delete(int id, byte[] timeStamp, bool persist = true)
+        //{
+        //    var entry = GetEntryFromChangeTracker(id);
+        //    if (entry != null)
+        //    {
+        //        if (timeStamp != null && entry.TimeStamp.SequenceEqual(timeStamp))
+        //        {
+        //            return Delete(entry, persist);
+        //        }
+        //        throw new Exception("Unable to delete due to concurrency violation.");
+        //    }
+        //    Db.Entry(new T { Id = id, TimeStamp = timeStamp }).State = EntityState.Deleted;
+        //    return persist ? SaveChanges() : 0;
+        //}
 
         public int SaveChanges()
         {

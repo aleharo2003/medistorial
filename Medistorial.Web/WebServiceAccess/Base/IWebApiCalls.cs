@@ -10,5 +10,8 @@ namespace Medistorial.Web.WebServiceAccess.Base
     {
         //PatientsController
         Task<IList<Patient>> GetPatientsAsync();
+        Task<Patient> GetPatientAsync(int patientId);
+        Task<string> SavePatient(Patient patient);
+        Task DeletePatient(int? Id);
     }
 }

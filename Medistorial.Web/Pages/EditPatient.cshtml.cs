@@ -8,16 +8,17 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Medistorial.DAL.EF;
 using Medistorial.Models;
+using Medistorial.Web.WebServiceAccess.Base;
 
-namespace Medistorial.Web.Pages.Admin
+namespace Medistorial.Web.Pages
 {
-    public class EditModel : PageModel
+    public class EditPatientModel : PageModel
     {
-        private readonly Medistorial.DAL.EF.ApplicationDbContext _context;
+        private readonly IWebApiCalls _webApiCalls;
 
-        public EditModel(Medistorial.DAL.EF.ApplicationDbContext context)
+        public EditPatientModel(IWebApiCalls webApiCalls)
         {
-            _context = context;
+            _webApiCalls = webApiCalls;
         }
 
         [BindProperty]
@@ -30,7 +31,7 @@ namespace Medistorial.Web.Pages.Admin
                 return NotFound();
             }
 
-            Patient = await _context.Patients.FirstOrDefaultAsync(m => m.Id == id);
+            Patient = await _webApiCalls.GetPatientAsync((int)id);
 
             if (Patient == null)
             {
@@ -44,32 +45,24 @@ namespace Medistorial.Web.Pages.Admin
             if (!ModelState.IsValid)
             {
                 return Page();
-            }
-
-            _context.Attach(Patient).State = EntityState.Modified;
+            }            
 
             try
             {
-                await _context.SaveChangesAsync();
+                await _webApiCalls.SavePatient(Patient);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!PatientExists(Patient.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+
+                return NotFound();                
             }
 
             return RedirectToPage("./Index");
         }
 
-        private bool PatientExists(int id)
-        {
-            return _context.Patients.Any(e => e.Id == id);
-        }
+        //private bool PatientExists(int id)
+        //{
+        //    return _context.Patients.Any(e => e.Id == id);
+        //}
     }
 }

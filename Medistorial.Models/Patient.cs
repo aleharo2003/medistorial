@@ -12,11 +12,11 @@ namespace Medistorial.Models
         [Required]
         [DataType(DataType.Date), Display(Name = "Fecha de Nacimiento")]
         public DateTime BirthDate { get; set; }
-        [DataType(DataType.Text), MaxLength(3), Display(Name = "Tipo de Sangre")]
+        //[DataType(DataType.Text), MaxLength(3), Display(Name = "Tipo de Sangre")]
         public BloodType BloodType { get; set; }
-        [Required]
-        [DataType(DataType.Text), MaxLength(50), Display(Name = "Genero")]
-        public Genre Genre { get; set; }
+        //[Required]
+        //[DataType(DataType.Text), MaxLength(50), Display(Name = "Genero")]
+        //public Genre Genre { get; set; }
         [DataType(DataType.Text), MaxLength(8), Display(Name = "D.N.I.")]
         public string DNI { get; set; }
         [DataType(DataType.Text), MaxLength(50), Display(Name = "Obra Social")]

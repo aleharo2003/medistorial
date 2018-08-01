@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Medistorial.DAL.EF;
 using Medistorial.Models;
+using Medistorial.Web.WebServiceAccess.Base;
 
-namespace Medistorial.Web.Pages.Borrar2
+namespace Medistorial.Web.Pages
 {
-    public class CreateModel : PageModel
+    public class CreatePatientModel : PageModel
     {
-        private readonly Medistorial.DAL.EF.ApplicationDbContext _context;
+        private readonly IWebApiCalls _webApiCalls;
 
-        public CreateModel(Medistorial.DAL.EF.ApplicationDbContext context)
+        public CreatePatientModel(IWebApiCalls webApiCalls)
         {
-            _context = context;
+            _webApiCalls = webApiCalls;
         }
 
         public IActionResult OnGet()
@@ -25,7 +26,7 @@ namespace Medistorial.Web.Pages.Borrar2
         }
 
         [BindProperty]
-        public Medic Medic { get; set; }
+        public Patient Patient { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -34,8 +35,15 @@ namespace Medistorial.Web.Pages.Borrar2
                 return Page();
             }
 
-            _context.Medics.Add(Medic);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _webApiCalls.SavePatient(Patient);
+            }
+            catch (Exception ex)
+            {
+
+                return NotFound();
+            }
 
             return RedirectToPage("./Index");
         }

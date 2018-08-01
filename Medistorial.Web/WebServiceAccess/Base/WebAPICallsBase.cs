@@ -102,11 +102,21 @@ namespace Medistorial.Web.WebServiceAccess.Base
 
         protected async Task<string> SubmitPostRequestAsync(string uri, string json)
         {
-            using (var client = new HttpClient())
+            try
             {
-                var task = client.PostAsync(uri, CreateStringContent(json));
-                return await ExecuteRequestAndProcessResponse(uri, task);
+                using (var client = new HttpClient())
+                {
+                    var task = client.PostAsync(uri, CreateStringContent(json));
+                    return await ExecuteRequestAndProcessResponse(uri, task);
+                }
             }
+            catch (Exception ex)
+            {
+                var lala = ex.Message;
+                return null;
+
+            }
+            
         }
 
         protected async Task<string> SubmitPutRequestAsync(string uri, string json)

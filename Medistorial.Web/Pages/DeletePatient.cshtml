@@ -1,12 +1,5 @@
 ﻿@page
-@model Medistorial.Web.Pages.Admin.DeleteModel
-
-@{
-    ViewData["Title"] = "Delete";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
-}
-
-<h2>Delete</h2>
+@model Medistorial.Web.Pages.DeletePatientModel
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -24,12 +17,6 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Patient.BloodType)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Patient.Genre)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Patient.Genre)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Patient.DNI)
@@ -60,12 +47,6 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Patient.LastName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Patient.TimeStamp)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Patient.TimeStamp)
         </dd>
     </dl>
     

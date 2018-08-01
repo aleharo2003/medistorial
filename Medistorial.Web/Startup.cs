@@ -72,7 +72,14 @@ namespace Medistorial.Web
                 });
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc()
+                .AddRazorPagesOptions(
+                options =>
+                {
+                    options.Conventions.AuthorizeFolder("/Admin");
+                    options.Conventions.AuthorizeFolder("/Users");
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,7 +90,7 @@ namespace Medistorial.Web
                 app.UseDeveloperExceptionPage();
                 loggerFactory.AddConsole(Configuration.GetSection("Logging"));
                 loggerFactory.AddDebug();
-                app.UseDeveloperExceptionPage();
+               app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }
             else
@@ -97,8 +104,8 @@ namespace Medistorial.Web
             app.UseCookiePolicy();
 
             app.UseAuthentication();
-
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
+            
         }
     }
 }
