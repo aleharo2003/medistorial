@@ -40,5 +40,6 @@ namespace Medistorial.Web.WebServiceAccess
             var uri = $"{PatientBaseUri}{Id}";
             await SubmitDeleteRequestAsync(uri);
         }       
+        //this is a test
     }
 }
