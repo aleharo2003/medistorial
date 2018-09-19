@@ -1,0 +1,14 @@
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\obj\Debug\netcoreapp2.1\Medistorial.Services.csprojAssemblyReference.cache
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\obj\Debug\netcoreapp2.1\Medistorial.Services.csproj.CoreCompileInputs.cache
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\obj\Debug\netcoreapp2.1\Medistorial.Services.AssemblyInfoInputs.cache
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\obj\Debug\netcoreapp2.1\Medistorial.Services.AssemblyInfo.cs
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\bin\Debug\netcoreapp2.1\Medistorial.Services.deps.json
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\bin\Debug\netcoreapp2.1\Medistorial.Services.dll
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\bin\Debug\netcoreapp2.1\Medistorial.Services.pdb
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\bin\Debug\netcoreapp2.1\Medistorial.Core.dll
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\bin\Debug\netcoreapp2.1\Medistorial.Core.pdb
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\obj\Debug\netcoreapp2.1\Medistorial.Services.csproj.CopyComplete
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\obj\Debug\netcoreapp2.1\Medistorial.Services.dll
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\obj\Debug\netcoreapp2.1\Medistorial.Services.pdb
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\bin\Debug\netcoreapp2.1\Medistorial.Data.dll
+D:\Code\HB\medistorialMVC\Medistorial.Data\Medistorial.Services\bin\Debug\netcoreapp2.1\Medistorial.Data.pdb
